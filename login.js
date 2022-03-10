@@ -17,8 +17,8 @@ function loginLoad(){
 
 function checkLogin(){
 	//ถ้าตรวจสอบแล้วพบว่ามีการ login ไม่ถูกต้อง ให้ return false ด้วย
-	var a = document.getElementsById('username').values;
-	var b = document.getElementsById('password').values;
+	var a = document.getElementById('username').value;
+	var b = document.getElementById('password').value;
 
 	if(a != username || b != password){
         alert('Invalid Username or Password')
