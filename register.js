@@ -1,24 +1,23 @@
 window.onload = pageLoad;
 function pageLoad(){
-    var form = document.getElementById('myForm');
-    // console.log("F1", + form);
+    var form = document.getElementById("myForm");
     form.onsubmit = checkpassword;    
 }
 
 function checkpassword(){
-    let password1 = document.getElementsById('password').value;
-    let password2 = document.getElementsById('repassword').value;
 
-    if(password1 != password2 || password1 == null || password2 == null){
-        // console.log("p1", + password1);
-        // console.log("p2", + password2);
+    let password1 = document.getElementById('password').value;
+    let password2 = document.getElementById('repassword').value;
+
+    if(!password1 || !password2 || password1 != password2) { 
+        console.log(password1,password2);
+        document.getElementById('errormsg').innerHTML = "Error";
         alert('Invalid Password')
+        // ถ้าผิดแล้วแก้ให้ถูก แต่ถ้าไม่รีเทินจะกดโอเคละขึ้นสำเร็จ
         return false;
     }
-    else{
-        alert('Success')
-    }
+    alert("Success")
+
    
 }
-
 
